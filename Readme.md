@@ -1,1 +1,1 @@
-## HERE I WILL WRITE KUBERNETES COMPONENTS WHICH ARE USED MOSTLY 
+## HERE are some kubernetes files which I have used
