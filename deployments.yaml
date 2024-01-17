@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox
+  labels:
+    app: busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+        - name: test-pod
+          image: busybox
+          command: ["/bin/sh"]
+          args: ["-c","sh echo hello"]
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          resources:
+            requests:
+              memory: 250Mi
+              cpu: 0.5
+            limits:
+              memory: 250Mi 
+              cpu: 0.5
